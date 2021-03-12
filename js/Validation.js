@@ -1,10 +1,10 @@
 var Validation = function () {
     this.kiemTraRong = function (selector, name, errorSelector) {
         if (document.querySelector(selector).value.trim() === '') {
-            document.querySelector(errorSelector).innerHTML = name;
+            document.querySelector(errorSelector).innerHTML = name + ' không được bỏ trống';
             return false;
         }
-        document.querySelector(error_selector).innerHTML = '';
+        document.querySelector(errorSelector).innerHTML = '';
         return true;
     }
     this.kiemTraSo = function (selector, name, error_selector) {
@@ -27,7 +27,7 @@ var Validation = function () {
         return true;
     }
     this.kiemTraChu = function (selector, name, error_selector) {
-        var regex =/^[A-Za-z ]++,[A-Za-z ]++$/;
+        var regex =/^[A-Za-z]+$/;
         if (regex.test(document.querySelector(selector).value)) {
             document.querySelector(error_selector).innerHTML = '';
             return true;
